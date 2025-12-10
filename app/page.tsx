@@ -16,8 +16,20 @@ export default function Home() {
       <Features />
       <Testimonials />
       <Team />
-      <Contact />
-      <Footer />
+      
+      {/* Contact + Footer with shared background image */}
+      <div 
+        className="relative"
+        style={{
+          backgroundImage: "url('/images/image copy.png')",
+          backgroundSize: "auto 100%",
+          backgroundPosition: "right bottom",
+          backgroundRepeat: "no-repeat"
+        }}
+      >
+        <Contact />
+        <Footer />
+      </div>
     </main>
   );
 }
