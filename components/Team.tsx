@@ -1,26 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CardSpotlight } from "@/components/ui/card-spotlight";
+import { EvervaultCard, Icon } from "@/components/ui/evervault-card";
 
 const team = [
   {
     name: "Charmi Dhanesha",
     role: "Co-Founder & CEO",
-    bio: "Visionary leader with expertise in healthcare technology and aged care innovation.",
-    image: "https://placehold.co/400x500/0077B6/ffffff?text=Charmi"
+    initials: "CD"
   },
   {
     name: "Moushmi Gupta",
     role: "Co-Founder & CTO",
-    bio: "Technology pioneer driving AR/VR solutions for transformative healthcare training.",
-    image: "https://placehold.co/400x500/0077B6/ffffff?text=Moushmi"
+    initials: "MG"
   }
 ];
 
 export default function Team() {
   return (
-    <section className="py-24 bg-wisecura-text">
+    <section 
+      className="py-24 relative"
+      style={{
+        backgroundImage: "url('/images/image copy 2.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }}
+    >
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <motion.h2 
@@ -51,30 +57,21 @@ export default function Team() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.2 }}
             >
-              <CardSpotlight 
-                className="w-full max-w-sm h-auto"
-                color="#0077B6"
-                radius={400}
-              >
-                <div className="relative z-20">
-                  <div className="w-20 h-20 rounded-full bg-wisecura-primary/20 mx-auto mb-6 overflow-hidden border-2 border-wisecura-primary/30">
-                    <img 
-                      src={member.image} 
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h3 className="text-xl font-bold text-white text-center mb-2">
-                    {member.name}
-                  </h3>
-                  <p className="text-wisecura-secondary font-medium text-center mb-4">
-                    {member.role}
-                  </p>
-                  <p className="text-gray-400 text-center text-sm leading-relaxed">
-                    {member.bio}
-                  </p>
-                </div>
-              </CardSpotlight>
+              <div className="border border-white/[0.2] flex flex-col items-start max-w-sm mx-auto p-4 relative h-[30rem] rounded-xl bg-black/20">
+                <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white" />
+                <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white" />
+                <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white" />
+                <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-white" />
+
+                <EvervaultCard text={member.initials} />
+
+                <h3 className="text-white mt-4 text-xl font-bold">
+                  {member.name}
+                </h3>
+                <p className="text-sm border font-light border-white/[0.2] rounded-full mt-4 text-wisecura-secondary px-3 py-1">
+                  {member.role}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>
