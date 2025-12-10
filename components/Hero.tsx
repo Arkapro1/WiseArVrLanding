@@ -81,7 +81,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-wisecura-textLight max-w-xl mb-10 leading-relaxed"
+            className="text-lg md:text-xl text-black max-w-xl mb-10 leading-relaxed"
           >
             Upskilling the future of care through immersive simulations. 
             Clinical precision meets futuristic training.
@@ -114,7 +114,7 @@ export default function Hero() {
                 </div>
               ))}
             </div>
-            <div className="flex items-center gap-2 text-wisecura-textLight font-medium">
+            <div className="flex items-center gap-2 text-black font-medium">
               <div className="flex text-wisecura-accent">★★★★★</div>
               <span>Trusted by 1000+ Providers</span>
             </div>
