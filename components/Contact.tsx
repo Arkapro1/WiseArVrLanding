@@ -10,13 +10,10 @@ export default function Contact() {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ 
-          backgroundImage: "url('/images/bg.png')",
+          backgroundImage: "url('/images/getinTouch.png')",
           zIndex: 0 
         }}
       />
-      
-      {/* Overlay for better text visibility */}
-      <div className="absolute inset-0 bg-white/60" style={{ zIndex: 1 }} />
       
       <div className="container mx-auto px-6 relative" style={{ zIndex: 10 }}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">

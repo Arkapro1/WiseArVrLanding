@@ -48,7 +48,7 @@ export default function Footer() {
         
         {/* Large Brand Name */}
         <div className="relative mb-12">
-          <h2 className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-black text-gray-900 leading-none tracking-tighter lowercase select-none">
+          <h2 className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-black text-gray-900 leading-none tracking-tighter lowercase select-none" style={{ fontFamily: "'Sekuya', system-ui" }}>
             wisecura
           </h2>
         </div>
