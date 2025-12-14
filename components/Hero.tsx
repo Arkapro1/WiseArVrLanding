@@ -3,14 +3,14 @@
 import { motion } from "framer-motion";
 import { getCloudinaryVideoUrl } from "@/lib/cloudinary";
 
-function MaskedVideo() {
+function MaskedVideo({ className = "" }: { className?: string }) {
   const videoUrl = getCloudinaryVideoUrl(
     process.env.NEXT_PUBLIC_HERO_VIDEO_ID || 'sample',
     { quality: 'auto', format: 'auto' }
   );
   return (
-    <section
-      className="relative w-full max-w-4xl"
+    <div
+      className={`relative w-full ${className}`}
       style={{
         aspectRatio: '16/9',
         maskImage:
@@ -21,6 +21,8 @@ function MaskedVideo() {
         WebkitMaskRepeat: 'no-repeat',
         maskSize: 'contain',
         WebkitMaskSize: 'contain',
+        maskPosition: 'center',
+        WebkitMaskPosition: 'center',
       }}
     >
       <video
@@ -35,7 +37,7 @@ function MaskedVideo() {
           type="video/mp4"
         />
       </video>
-    </section>
+    </div>
   );
 }
 
@@ -52,20 +54,20 @@ export default function Hero() {
       />
       
       {/* Subtle overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/40 to-transparent" style={{ zIndex: 1 }} />
+      <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/40 to-transparent md:from-white/70 md:via-white/40 md:to-transparent" style={{ zIndex: 1 }} />
 
       {/* Content Grid */}
-      <div className="relative container mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" style={{ zIndex: 10 }}>
+      <div className="relative container mx-auto px-4 sm:px-6 py-16 sm:py-20 flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center" style={{ zIndex: 10 }}>
         
         {/* Left Side - Text Content */}
-        <div className="text-left">
+        <div className="text-center lg:text-left order-2 lg:order-1">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mb-8"
+            className="mb-6 sm:mb-8"
           >
-            <span className="px-4 py-2 rounded-full bg-wisecura-primary text-white text-sm font-bold tracking-wider uppercase shadow-lg">
+            <span className="px-3 sm:px-4 py-2 rounded-full bg-wisecura-primary text-white text-xs sm:text-sm font-bold tracking-wider uppercase shadow-lg">
               Wise Cura
             </span>
           </motion.div>
@@ -74,7 +76,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 tracking-tight text-wisecura-text leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-4 sm:mb-6 tracking-tight text-wisecura-text leading-tight"
           >
             Immersive AR/VR Training for{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-wisecura-primary to-wisecura-secondary">
@@ -86,7 +88,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-black max-w-xl mb-10 leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-black max-w-xl mx-auto lg:mx-0 mb-8 sm:mb-10 leading-relaxed"
           >
             Upskilling the future of care through immersive simulations. 
             Clinical precision meets futuristic training.
@@ -96,12 +98,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 mb-10"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-10 justify-center lg:justify-start"
           >
-            <button className="px-8 py-4 bg-wisecura-primary hover:bg-blue-600 text-white rounded-full font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+            <button className="px-6 sm:px-8 py-3 sm:py-4 bg-wisecura-primary hover:bg-blue-600 text-white rounded-full font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-sm sm:text-base">
               Book a Demo
             </button>
-            <button className="px-8 py-4 bg-white hover:bg-gray-50 text-wisecura-text border border-wisecura-border rounded-full font-bold transition-all shadow-sm hover:shadow-md">
+            <button className="px-6 sm:px-8 py-3 sm:py-4 bg-white hover:bg-gray-50 text-wisecura-text border border-wisecura-border rounded-full font-bold transition-all shadow-sm hover:shadow-md text-sm sm:text-base">
               Explore Modules
             </button>
           </motion.div>
@@ -110,35 +112,35 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="flex items-center gap-4"
+            className="flex items-center gap-3 sm:gap-4 justify-center lg:justify-start flex-wrap"
           >
             <div className="flex -space-x-2">
               {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 overflow-hidden shadow-md">
+                <div key={i} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white bg-gray-200 overflow-hidden shadow-md">
                   <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="User" className="w-full h-full object-cover" />
                 </div>
               ))}
             </div>
-            <div className="flex items-center gap-2 text-black font-medium">
-              <div className="flex text-wisecura-accent">★★★★★</div>
+            <div className="flex items-center gap-2 text-black font-medium text-sm sm:text-base">
+              <div className="flex text-wisecura-accent text-xs sm:text-base">★★★★★</div>
               <span>Trusted by 1000+ Providers</span>
             </div>
           </motion.div>
         </div>
 
-        {/* Right Side - Masked Video Component */}
+        {/* Right Side - Masked Video Component (Now visible on all screens) */}
         <motion.div
-          initial={{ opacity: 0, x: 50, scale: 0.95 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
+          initial={{ opacity: 0, y: 30, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="hidden lg:flex justify-end items-center"
+          className="flex justify-center lg:justify-end items-center w-full order-1 lg:order-2 mb-6 lg:mb-0"
         >
-          <MaskedVideo />
+          <MaskedVideo className="max-w-sm sm:max-w-md md:max-w-lg lg:max-w-4xl" />
         </motion.div>
       </div>
       
       {/* Decorative Gradient at Bottom */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-wisecura-background to-transparent" style={{ zIndex: 20 }} />
+      <div className="absolute bottom-0 left-0 w-full h-20 sm:h-32 bg-gradient-to-t from-wisecura-background to-transparent" style={{ zIndex: 20 }} />
     </section>
   );
 }
