@@ -5,11 +5,6 @@ import { EvervaultCard, Icon } from "@/components/ui/evervault-card";
 
 const team = [
   {
-    name: "Charmi Dhanesha",
-    role: "Co-Founder & CEO",
-    initials: "CD"
-  },
-  {
     name: "Moushmi Gupta",
     role: "Co-Founder & CTO",
     initials: "MG"
