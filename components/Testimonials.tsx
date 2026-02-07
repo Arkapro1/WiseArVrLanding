@@ -5,28 +5,22 @@ import { useRef, useEffect, useState } from "react";
 
 const testimonials = [
   {
-    quote: "Wise Cura has completely transformed our onboarding process. The VR modules are incredibly realistic.",
-    author: "Sarah Jenkins",
-    role: "Clinical Director, Aged Care Plus",
-    image: "https://i.pravatar.cc/150?img=1"
+    quote: "Wise Cura has the potential to completely transform our onboarding process. The VR module on Anesthesia is incredibly realistic.",
+    author: "Dr. Palak Gupta",
+    role: "MBBS, MD, Anesthesiologist",
+    image: "/images/moshmi.jpeg"
   },
   {
-    quote: "The staff engagement levels have skyrocketed. They actually look forward to training sessions now.",
-    author: "Michael Chen",
-    role: "Operations Manager, Sunrise Living",
-    image: "https://i.pravatar.cc/150?img=11"
-  },
-  {
-    quote: "A game-changer for remote training. We can ensure consistent quality of care across all our facilities.",
-    author: "Emma Thompson",
-    role: "Head of L&D, CareFirst",
+    quote: "Having been in the Aged Care Industry for 30 years and having attended lots of different training sessions, I have not experienced the level of immersion which I felt doing the VR modules. The modules were super realistic, from the interactions with patients through the hand held devices to being able to move around the room to perform different tasks. The fundamental education prompts through the training also reinforced learnings. The module workflows were appropriate to 'real life' scenarios and visuals were effective. After a short adjustment period, I felt confident and comfortable to undertake and complete the training without issues. An effective and efficient way to undertake learning. I would highly recommend.",
+    author: "Jodi N",
+    role: "Aged Care Quality Assurance & Care Worker Training Leader",
     image: "https://i.pravatar.cc/150?img=5"
   },
   {
-    quote: "The dementia care module provided insights that traditional training simply cannot convey.",
-    author: "David Wilson",
-    role: "Senior Nurse, Harmony Homes",
-    image: "https://i.pravatar.cc/150?img=3"
+    quote: "WiseCura VR based modules hold great potential for remote training and upskilling of Australia Aged Care Staff.",
+    author: "Dr. Malav Trivedi",
+    role: "Scientist, Australia",
+    image: "https://i.pravatar.cc/150?img=11"
   }
 ];
 
