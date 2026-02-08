@@ -100,10 +100,16 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-10 justify-center lg:justify-start"
           >
-            <button className="px-6 sm:px-8 py-3 sm:py-4 bg-wisecura-primary hover:bg-blue-600 text-white rounded-full font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-sm sm:text-base">
+            <button
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-wisecura-primary hover:bg-blue-600 text-white rounded-full font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-sm sm:text-base"
+            >
               Book a Demo
             </button>
-            <button className="px-6 sm:px-8 py-3 sm:py-4 bg-white hover:bg-gray-50 text-wisecura-text border border-wisecura-border rounded-full font-bold transition-all shadow-sm hover:shadow-md text-sm sm:text-base">
+            <button
+              onClick={() => document.getElementById('modules')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-white hover:bg-gray-50 text-wisecura-text border border-wisecura-border rounded-full font-bold transition-all shadow-sm hover:shadow-md text-sm sm:text-base"
+            >
               Explore Modules
             </button>
           </motion.div>

@@ -5,7 +5,7 @@ import { Mail, MapPin } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section className="py-12 sm:py-16 md:py-24 relative overflow-hidden">
+    <section id="contact" className="py-12 sm:py-16 md:py-24 relative overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -30,7 +30,7 @@ export default function Contact() {
                 </div>
                 <div className="text-left">
                   <p className="text-xs sm:text-sm text-gray-600">Email Us</p>
-                  <p className="font-medium text-black text-sm sm:text-base">info@wisecura.com.au</p>
+                  <p className="font-medium text-black text-sm sm:text-base">office@wisecura.com</p>
                 </div>
               </div>
               
