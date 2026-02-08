@@ -46,21 +46,33 @@ export default function Testimonials() {
           dragConstraints={{ right: 0, left: -width }} 
           className="flex gap-8"
         >
-          {testimonials.map((t, i) => (
+          {testimonials.map((t, i) => {
+            const initials = t.author
+              .split(" ")
+              .filter(Boolean)
+              .slice(0, 2)
+              .map((part) => part[0])
+              .join("")
+              .toUpperCase();
+
+            return (
             <motion.div 
               key={i}
               className="min-w-[350px] md:min-w-[450px] p-8 rounded-2xl bg-white/60 backdrop-blur-md border border-wisecura-border shadow-glass hover:shadow-glass-hover transition-all duration-300"
             >
               <p className="text-xl font-medium text-wisecura-text mb-8 leading-relaxed">"{t.quote}"</p>
               <div className="flex items-center gap-4">
-                <img src={t.image} alt={t.author} className="w-12 h-12 rounded-full object-cover" />
+                <div className="w-12 h-12 rounded-full bg-wisecura-primary/10 border border-wisecura-primary/30 flex items-center justify-center text-wisecura-primary font-bold">
+                  {initials}
+                </div>
                 <div>
                   <h4 className="font-bold text-wisecura-text">{t.author}</h4>
                   <p className="text-sm text-wisecura-textLight">{t.role}</p>
                 </div>
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </motion.div>
       </motion.div>
     </section>
