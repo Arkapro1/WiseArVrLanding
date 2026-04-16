@@ -7,7 +7,7 @@ import { useState } from "react";
 const team = [
   {
     name: "Moushmi Gupta",
-    role: "Co-Founder & CTO",
+    role: "Co-Founder & CEO",
     initials: "MG",
     image: "/images/moshmi.jpeg",
     linkedIn: "https://www.linkedin.com/in/moushmi-gupta-84a565b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
